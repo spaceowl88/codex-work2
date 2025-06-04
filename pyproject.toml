@@ -10,7 +10,7 @@ packages = [{include = "meme_spike_hunter", from = "src"}]
 python = "^3.12"
 
 tweepy = "*"
-"httpx[http2]" = "*"
+httpx = {version = "*", extras = ["http2"]}
 pandas = "*"
 scipy = "*"
 typer = "*"
