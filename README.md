@@ -29,6 +29,23 @@ poetry run python -m meme_spike_hunter.cli --handles crypto_whale,elonmusk --key
 | Twitter API           | Essential + Apify Trends Backup | $0          |
 | 기타(서버 등)         | -                              | 사용량에 따라 |
 
+## 개발 타임라인
+
+| 주차 | 목표 | 산출물 |
+|------|------|--------|
+| W0 | 🟢 **Kick-off** – 위 초기 파일 세트 생성 & 첫 커밋 | v0.0.1 |
+| W1 | Twitter 수집기 완성, 키워드/핸들 필터 동작 확인 | `twitter.py` |
+| W2 | Spike Detector 로직 + 단위 테스트 강화 | `spike.py` |
+| W3 | Dex 모니터링(pump.fun/pumpswap/dexscreener) 통합 | `dex.py` |
+| W4 | Typer CLI: `hunt`, `add-handle`, 알림(터미널·시스템) 연결 | `cli.py` |
+| W5 | 로깅·리트라이·Docker, 비용 최적화 메모 | v0.1.0 |
+
 ## 라이선스
 
 MIT
+
+## 다음 할 일 (To-Do)
+
+- Twitter 수집기 구현
+- Spike Detector 테스트 보강
+- DEX 모니터링 통합

@@ -4,6 +4,7 @@ import argparse
 
 
 def main() -> None:
+    """Entry point for the Spike Hunter CLI."""
     parser = argparse.ArgumentParser(description="Meme-Coin Spike Hunter")
     parser.add_argument(
         "--handles", type=str, default="", help="Comma-separated Twitter handles"
