@@ -4,7 +4,10 @@ version = "0.1.0"
 description = "Meme-Coin Spike Hunter"
 authors = ["Your Name <you@example.com>"]
 license = "MIT"
-packages = [{include = "meme_spike_hunter", from = "src"}]
+packages = [
+    {include = "meme_spike_hunter", from = "src"},
+    {include = "memehunter", from = "src"},
+]
 
 [tool.poetry.dependencies]
 python = "^3.12"
