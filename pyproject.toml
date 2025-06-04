@@ -1,0 +1,35 @@
+[tool.poetry]
+name = "meme-spike-hunter"
+version = "0.1.0"
+description = "Meme-Coin Spike Hunter"
+authors = ["Your Name <you@example.com>"]
+license = "MIT"
+packages = [{include = "meme_spike_hunter", from = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+tweepy = "*"
+httpx = {version = "*", extras = ["http2"]}
+pandas = "*"
+scipy = "*"
+typer = "*"
+python-dotenv = "*"
+rich = "*"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "*"
+pytest-asyncio = "*"
+ruff = "*"
+black = "*"
+pre-commit = "*"
+
+[tool.black]
+line-length = 88
+
+[tool.ruff]
+line-length = 88
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
