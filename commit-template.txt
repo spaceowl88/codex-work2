@@ -1,0 +1,5 @@
+feat: add new spike detection module
+
+fix: handle edge cases in zscore calculation
+
+docs: update README with usage examples
