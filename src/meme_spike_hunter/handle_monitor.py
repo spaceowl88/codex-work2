@@ -1,19 +1,26 @@
 from __future__ import annotations
 
-from typing import Sequence
-
 
 def tweet_mentions(
-    tweet_text: str,
-    tweet_handle: str,
+    text: str,
+    author: str,
     *,
-    handles: Sequence[str],
-    keywords: Sequence[str],
+    handles: list[str],
+    keywords: list[str],
 ) -> bool:
-    """Return True if the tweet is from a monitored handle and mentions keywords."""
-    handle_normalized = tweet_handle.lstrip("@").lower()
-    if handle_normalized not in {h.lstrip("@").lower() for h in handles}:
-        return False
+    """Return True if the tweet matches our monitoring criteria.
 
-    text_lower = tweet_text.lower()
-    return any(keyword.lower() in text_lower for keyword in keywords)
+    Parameters
+    ----------
+    text : str
+        Tweet text.
+    author : str
+        Tweet author handle.
+    handles : list[str]
+        List of handles to monitor.
+    keywords : list[str]
+        List of keywords to monitor.
+    """
+    if not any(h.lower() in author.lower() for h in handles):
+        return False
+    return any(k.lower() in text.lower() for k in keywords)

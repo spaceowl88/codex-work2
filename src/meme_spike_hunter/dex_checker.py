@@ -1,20 +1,15 @@
 from __future__ import annotations
 
-import json
-from typing import Any
+from typing import Any, List
 
 
 class DexChecker:
-    """Parse pump.fun or pumpswap responses for coin information."""
+    """Check for new DEX pairs."""
 
-    def __init__(self, data: dict[str, Any]):
-        self.data = data
+    def __init__(self, response: dict[str, Any]) -> None:
+        """Initialize with a DEX API response."""
+        self.response = response
 
-    @classmethod
-    def from_json(cls, text: str) -> "DexChecker":
-        return cls(json.loads(text))
-
-    def coin_addresses(self) -> list[str]:
-        """Return list of new coin mint addresses."""
-        coins = self.data.get("coins", [])
-        return [coin.get("address", "") for coin in coins]
+    def coin_addresses(self) -> List[str]:
+        """Return a list of coin addresses from the response."""
+        return [coin["address"] for coin in self.response["coins"]]
