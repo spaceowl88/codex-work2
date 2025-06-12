@@ -1,4 +1,6 @@
-import sys
-from pathlib import Path
+"""Pytest configuration."""
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
+import pytest
+
+
+pytest_plugins = ["pytest_asyncio"]
